@@ -1,6 +1,5 @@
 import React from 'react';
 import { render } from 'react-dom';
+import router from './router';
 
-
-
-render(<div>hay hay</div>, document.getElementById('container'));
+render(router, document.getElementById('container'));
