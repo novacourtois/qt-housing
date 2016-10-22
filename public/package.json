@@ -33,7 +33,8 @@
   "babel": {
     "sourceType": "module",
     "presets": [
-      "es2015"
+      "es2015",
+      "react"
     ]
   },
   "author": [
@@ -53,8 +54,15 @@
     "json-scaffold": "^0.1.1",
     "onchange": "^2.5.0",
     "parallelshell": "^2.0.0",
+    "react": "^15.3.2",
     "react-addons-test-utils": "^15.3.0",
+    "react-dom": "^15.3.2",
     "watchify": "^3.7.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "material-ui": "^0.16.1",
+    "react-redux": "^4.4.5",
+    "react-tap-event-plugin": "^1.0.0",
+    "redux": "^3.6.0"
+  }
 }
