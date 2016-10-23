@@ -5,37 +5,105 @@
 
 'use strict';
 
-var Thing = require('../api/thing/thing.model');
 var User = require('../api/user/user.model');
 
-Thing.find({}).remove(function() {
-  Thing.create({
-    name : 'Development Tools',
-    info : 'Integration with popular tools such as Bower, Grunt, Karma, Mocha, JSHint, Node Inspector, Livereload, Protractor, Jade, Stylus, Sass, CoffeeScript, and Less.'
-  }, {
-    name : 'Server and Client integration',
-    info : 'Built with a powerful and fun stack: MongoDB, Express, AngularJS, and Node.'
-  }, {
-    name : 'Smart Build System',
-    info : 'Build system ignores `spec` files, allowing you to keep tests alongside code. Automatic injection of scripts and styles into your index.html'
-  },  {
-    name : 'Modular Structure',
-    info : 'Best practice client and server structures allow for more code reusability and maximum scalability'
-  },  {
-    name : 'Optimized Build',
-    info : 'Build process packs up your templates as a single JavaScript payload, minifies your scripts/css/images, and rewrites asset names for caching.'
-  },{
-    name : 'Deployment Ready',
-    info : 'Easily deploy your app to Heroku or Openshift with the heroku and openshift subgenerators'
-  });
-});
 
 User.find({}).remove(function() {
   User.create({
     provider: 'local',
-    name: 'Test User',
+    firstName: 'Hannah',
+    lastName: 'Tyler',
+    email: 'look1@test.com',
+    username: 'hannah_tyler',
+    password: 'test',
+    pronouns: 'they / them / their',
+    profileType: 'looking'
+  }, {
+    provider: 'local',
+    firstName: 'Nova',
+    lastName: 'Courtois',
+    email: 'look2@test.com',
+    username: 'novacourtois',
+    password: 'test',
+    pronouns: 'they / them / their',
+    profileType: 'looking'
+  }, {
+    provider: 'local',
+    firstName: 'Alex',
+    lastName: 'Fire',
+    email: 'look3@test.com',
+    username: 'alexFire',
+    password: 'test',
+    pronouns: 'they / them / their',
+    profileType: 'looking'
+  }, {
+    provider: 'local',
+    firstName: 'Bree',
+    lastName: 'Davis',
+    email: 'look4@test.com',
+    username: 'breedavis',
+    password: 'test',
+    pronouns: 'they / them / their',
+    profileType: 'looking'
+  }, 
+
+  {
+    provider: 'local',
+    firstName: 'Quinn',
+    lastName: 'Last',
+    email: 'rent1@test.com',
+    username: 'quinnlast',
+    password: 'test',
+    pronouns: 'they / them / their',
+    profileType: 'looking'
+  }, {
+    provider: 'local',
+    firstName: 'Gabi',
+    lastName: 'Zero',
+    email: 'rent2@test.com',
+    username: 'gabizero',
+    password: 'test',
+    pronouns: 'they / them / their',
+    profileType: 'looking'
+  }, {
+    provider: 'local',
+    firstName: 'Riley',
+    lastName: 'Glz',
+    email: 'rent3@test.com',
+    username: 'rileyglz',
+    password: 'test',
+    pronouns: 'they / them / their',
+    profileType: 'looking'
+  }, {
+    provider: 'local',
+    firstName: 'Lou',
+    lastName: 'Was',
+    email: 'rent4@test.com',
+    username: 'whatLou',
+    password: 'test',
+    pronouns: 'they / them / their',
+    profileType: 'looking'
+  }, {
+    provider: 'local',
+    firstName: 'Andi',
+    lastName: 'Serpant',
+    email: 'rent5@test.com',
+    username: 'andAserpent',
+    password: 'test',
+    pronouns: 'they / them / their',
+    profileType: 'looking'
+  }, 
+
+
+  {
+    provider: 'local',
+    firstName: 'Fake',
+    lastName: 'User',
+    username: 'FakeUser',
     email: 'test@test.com',
-    password: 'test'
+    password: 'password',
+    profileType: 'renting',
+    age: 18
   }, {
     provider: 'local',
     role: 'admin',

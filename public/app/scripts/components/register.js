@@ -1,6 +1,7 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import { browserHistory } from 'react-router';
 
 export default React.createClass({
 	getInitialState() {
@@ -19,8 +20,7 @@ export default React.createClass({
 		this.props.handleRegister(this.state.username, this.state.password);
 	},
 	componentWillReceiveProps(nextProps) {
-		console.log(nextProps);
-		if (nextProps.username !== '') {
+		if (nextProps.token) {
 			browserHistory.push('/matches')
 		}
 	},

@@ -29,7 +29,7 @@ exports.create = function (req, res, next) {
   newUser.role = 'user';
   newUser.save(function(err, user) {
     if (err) return validationError(res, err);
-    var token = jwt.sign({_id: user._id }, config.secrets.session, { expiresIn:  '300m'});
+    var token = jwt.sign({_id: user._id }, config.secrets.session, { expiresInMinutes: 60*5 });
     res.json({ token: token });
   });
 };
@@ -90,6 +90,23 @@ exports.me = function(req, res, next) {
     if (err) return next(err);
     if (!user) return res.status(401).send('Unauthorized');
     res.json(user);
+  });
+};
+
+
+exports.feed = function(req, res, next) {
+  var userId = req.user._id;
+
+  var profileType = "looking";
+  if (req.user.profileType == profileType) {
+    profileType = "renting";
+  }
+
+  User.find({
+    profileType: profileType
+  },  function(err, feed) { 
+    if (err) return next(err);
+    res.json(feed);
   });
 };
 

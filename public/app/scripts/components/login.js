@@ -1,44 +1,45 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import { browserHistory } from 'react-router';
 
 export default React.createClass({
 	getInitialState() {
 		return {
-			username: '',
+			email: '',
 			password: ''
 		}
 	},
-	updateUsername(username) {
-		this.setState({username: username.target.value})
+	updateUsername(email) {
+		this.setState({email: email.target.value})
 	},
 	updatePassword(password) {
 		this.setState({password: password.target.value})
 	},
 	handleLogin() {
-		this.props.handleLogin(this.state.username, this.state.password);
+		this.props.handleLogin(this.state.email, this.state.password);
 	},
 	componentWillReceiveProps(nextProps) {
-		console.log(nextProps);
-		if (nextProps.username !== '') {
+		if (nextProps.token) {
 			browserHistory.push('/matches')
 		}
 	},
 	render() {
-		console.log(this.props);
 
 		return (
 			<div>
 
 				<h1>QT Housing</h1>
 				<TextField
-				hintText="username"
-				floatingLabelText="Username"
-				floatingLabelFixed={true} />
+					onChange={this.updateUsername}
+					hintText="username"
+					floatingLabelText="Username"
+					floatingLabelFixed={true} />
 				<TextField
-				hintText="Password"
-				floatingLabelText="password"
-				type="password" />
+					onChange={this.updatePassword}
+					hintText="Password"
+					floatingLabelText="password"
+					type="password" />
 
 			<RaisedButton label="Login" fullWidth={true}
 					onClick={this.handleLogin}/>
