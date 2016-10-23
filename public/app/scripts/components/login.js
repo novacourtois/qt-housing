@@ -15,8 +15,8 @@ export default React.createClass({
 	updatePassword(password) {
 		this.setState({password: password.target.value})
 	},
-	handleRegister() {
-		this.props.handleRegister(this.state.username, this.state.password);
+	handleLogin() {
+		this.props.handleLogin(this.state.username, this.state.password);
 	},
 	componentWillReceiveProps(nextProps) {
 		console.log(nextProps);
@@ -25,24 +25,23 @@ export default React.createClass({
 		}
 	},
 	render() {
+		console.log(this.props);
+
 		return (
 			<div>
 
 				<h1>QT Housing</h1>
 				<TextField
-					onChange={this.updateUsername}
-					hintText="username"
-					floatingLabelText="Username"
-					floatingLabelFixed={true} />
+				hintText="username"
+				floatingLabelText="Username"
+				floatingLabelFixed={true} />
 				<TextField
-					onChange={this.updatePassword}
-					ref="password"
-					hintText="Password"
-					floatingLabelText="password"
-					type="password" />
+				hintText="Password"
+				floatingLabelText="password"
+				type="password" />
 
-				<RaisedButton label="Register" fullWidth={true}
-					onClick={this.handleRegister}/>
+			<RaisedButton label="Login" fullWidth={true}
+					onClick={this.handleLogin}/>
 
 			</div>
 		)

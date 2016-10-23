@@ -2,10 +2,10 @@ import React from 'react';
 import {Router, Route, browserHistory} from 'react-router';
 import { Provider } from 'react-redux';
 import Login from './containers/login';
-import Register from './containers/Register';
-import Setup from './containers/Setup';
+import Register from './containers/register';
+import Setup from './containers/setup';
 import Profile from './containers/profile';
-import Matches from './containers/Matches';
+import Matches from './containers/matches';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import ThemeManager from 'material-ui/styles/getMuiTheme';
 
