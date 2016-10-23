@@ -5,7 +5,7 @@ import React from 'react';
 export default React.createClass({
 	componentDidMount() {
 		console.log(this.props.session);
-		this.props.fetchFeed(this.props.session.token, this.props.session.profileType);
+		this.props.fetchFeed(this.props.session.token, 'looking');
 	},
 	render() {
 		return (
