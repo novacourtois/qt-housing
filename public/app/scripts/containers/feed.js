@@ -1,31 +1,26 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import CardPreview from '../components/cardPreview';
-// import CardDetail from '../components/cardDetail';
-
-const RegisterComponent = React.createClass({
-	render() {
-		return (
-			<div>cards go here</div>
-		)
-	}
-});
+import Feed from '../components/matches';
+import { fetchFeed } from '../actions/feed';
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user
+    session: state.session,
+		matches: state.feed.matches
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-
+		fetchFeed: (token, profileType) => {
+			dispatch(fetchFeed(token, profileType))
+		}
   }
 };
 
 const Register = connect(
   mapStateToProps,
   mapDispatchToProps
-)(RegisterComponent);
+)(Feed);
 
 export default Register

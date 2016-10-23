@@ -4,7 +4,7 @@ import RegisterComponent from '../components/register';
 import { register } from '../actions/session';
 
 const mapStateToProps = (state) => {
-  return state
+  return state.session
 };
 
 const mapDispatchToProps = (dispatch) => {
