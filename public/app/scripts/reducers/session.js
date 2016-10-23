@@ -1,5 +1,5 @@
 const initialState = {
-	username: 'nicerhugs',
+	username: '',
 	email: '',
 	phone: '',
 	isPhoneVerified: false,
