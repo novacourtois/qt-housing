@@ -17,9 +17,9 @@
     "watch-sass": "sass --watch app/scss:docs",
     "watch-scripts": "watchify app/scripts/main.js -d -v --outfile docs/main.js",
     "watch-assets": "onchange 'app/assets/**/*.*' -- npm run build-assets",
-    "watch": "parallelshell 'npm run watch-html' 'npm run watch-assets' 'npm run watch-sass' 'npm run watch-scripts'",
+    "watch": "parallelshell 'npm run watch-html' 'npm run watch-assets' 'npm run watch-sass' 'npm run watch-scripts' 'node ../server/app.js'",
     "start": "npm run build && npm run watch",
-    "preinstall": "if ! command -v http-server; then npm install -g http-server; fi && if ! command -v mocha; then npm install -g mocha; fi",
+    "preinstall": "if ! command -v mocha; then npm install -g mocha; fi",
     "postinstall": "npm start",
     "test": "mocha"
   },
