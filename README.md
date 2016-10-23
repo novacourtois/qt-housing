@@ -1,7 +1,5 @@
-[media/logo.png](media/logo.png)
+![logo](media/logo.png)
 ================================
-
-~   pageres
 
 Description
 -----------
@@ -45,9 +43,7 @@ Research
     from the entire collection of posts from these pages. Here are the results
     presented as a word cloud:
 
-![](media/research-keyword-extraction.png)
-
-![pageres](media/research-keyword-extraction.png)
+![keywords](media/research-keyword-extraction.png)
 
 -   With all of our background information we constructed empathy maps of both
     an individual looking for housing ("Quinn") as well as an individual looking
