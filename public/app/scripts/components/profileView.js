@@ -2,6 +2,7 @@ import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import TextField from 'material-ui/TextField';
@@ -15,7 +16,7 @@ const profileView = (props) => {
     <AppBar title="QT Housing" iconClassNameRight="muidocs-icon-navigation-expand-more"/>
 
     <Card>
-      <CardHeader avatar="images/jsa-128.jpg"/>
+      <CardHeader avatar="https://global.psu.edu/sites/default/files/images/Blank_Avatar_Female.jpg"/>
 
       <CardText>
       <TextField id="text-field-default" hintText="Name" rows={1}

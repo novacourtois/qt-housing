@@ -2,6 +2,7 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import { browserHistory, Link} from 'react-router';
+import FlatButton from 'material-ui/FlatButton';
 
 export default React.createClass({
 	getInitialState() {
@@ -36,8 +37,8 @@ export default React.createClass({
 					floatingLabelFixed={true} />
 				<TextField
 					onChange={this.updatePassword}
-					hintText="Password"
-					floatingLabelText="password"
+					hintText="password"
+					floatingLabelText="Password"
 					type="password" />
 
 			<RaisedButton label="Login" fullWidth={true}
