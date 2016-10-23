@@ -3,7 +3,11 @@ import TextField from 'material-ui/TextField';
 
 
 export default React.createClass({
+	componentWillMount() {
+		this.props.handleLogin('nicerhugs', 'password')
+	},
 	render() {
+		console.log(this.props.isFetching);
 		return (
 			<div>
 				<TextField
