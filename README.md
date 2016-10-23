@@ -10,24 +10,26 @@ Requirements
 ------------
 
 -   NPM
-
+-   Ruby Sass
 -   MongoDB
+
+Stack
+-----
+
+- Node/Express
+- Mongo
+- React
+- Redux
+- Material Design
 
 Install
 -------
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-$ npm install
-$ node server/app.js
+```bash
+$ cd server && npm install
+$ cd ../public && npm install
 $ open http://localhost:9000
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Background
-----------
-
--   tell a story / fear factor!!!!
-
--   present some statistics?
+```
 
 Research
 --------
@@ -49,20 +51,9 @@ Research
     an individual looking for housing ("Quinn") as well as an individual looking
     to share ("Hannah"). From this we built personas.
 
-UX Design
----------
 
--   form factor
-
--   amount public displayable info? - leave it up to individuals
-
--   what’s important to people? matching up according to what’s important
-
--   pronoun / gender identity respect
-
-The Future
+Roadmap
 ----------
 
 -   Interviews, viability testing — what’s really important (feedback, baby!)
-
 -   Communication in app vs external?
