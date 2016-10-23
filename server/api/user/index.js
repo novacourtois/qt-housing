@@ -14,5 +14,6 @@ router.get('/feed', auth.isAuthenticated(), controller.feed);
 router.put('/:id/password', auth.isAuthenticated(), controller.changePassword);
 router.get('/:id', auth.isAuthenticated(), controller.show);
 router.post('/', controller.create);
+router.put('/wave', auth.isAuthenticated(), controller.create);
 
 module.exports = router;

@@ -20,6 +20,14 @@ var UserSchema = new Schema({
   age: Number,
   headline: String,
   username: String,
+  waves:[{
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  }],
+  matches:[{
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  }],
   hashedPassword: String,
   provider: String,
   salt: String,
