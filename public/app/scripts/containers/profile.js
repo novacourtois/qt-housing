@@ -6,14 +6,14 @@ import Edit from '../components/profileEdit';
 const RegisterComponent = React.createClass({
 	render() {
 		return (
-			<div> <View/> <Edit/> </div>
+			<div> <View/> </div>
 		)
 	}
 });
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user
+    user: state.session
   }
 };
 
