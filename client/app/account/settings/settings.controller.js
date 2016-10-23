@@ -6,6 +6,8 @@ angular.module('qtHousingApp')
 
     $scope.user = Auth.getCurrentUser();
 
+    $scope.pronouns = ["they", "ze", "she"];
+
     $scope.changePassword = function() {
       $scope.submitted = true;
       if($scope.passform.$valid) {

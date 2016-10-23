@@ -3,21 +3,25 @@ div(ng-include='"components/shell/shell.html"')
 md-content.md-padding(flex layout-xs="column" layout-sm="column")
   md-card.settings-card
     md-card-content
-      h2.md-title Challonge Info
+      h2.md-title Profile Info
       form(name='infoform', ng-submit='changeInfo()', novalidate='')
         md-input-container
           label Current Password
           input(required='', type='password', name='pass', ng-model='user.pass')
           div(ng-messages='infoform.pass.$error')
             div(ng-message='required') This is required.
+
         md-input-container
-          label Api Key
-          input(required='', type='text', name='api_key', ng-model='user.api_key')
-          div(ng-messages='form.api_key.$error')
+          label Age
+          input(required='', type='number', name='age', ng-model='user.age' min="18")
+          div(ng-messages='infoform.age.$error')
             div(ng-message='required') This is required.
-        md-input-container
-          label Subdomain
-          input(type='text', name='subdomain', ng-model='user.subdomain')
+        
+        md-radio-group(ng-model="user.profileType")
+          md-radio-button.md-primary(value="looking" ) Looking
+          md-radio-button(value="renting") Renting
+        md-select.station.text-center(ng-model="user.pronouns" )
+          md-option(ng-repeat="pronoun in pronouns" ng-value="pronoun" ) {{pronoun}}
 
         h4 {{infomessage}}
 

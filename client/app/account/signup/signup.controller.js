@@ -5,6 +5,17 @@ angular.module('qtHousingApp')
     $scope.user = {};
     $scope.errors = {};
 
+    $scope.profileOptions = ['looking', 'renting'];
+
+    // $scope.pronouns = [
+    //   {"they":"they / them / their"},
+    //   {"ze":" ze / zir / zirs"},
+    //   {"she": "she / her / hers"}
+    // ];
+
+    $scope.pronouns = ["they", "ze", "she"];
+
+
     $scope.register = function(form) {
       $scope.submitted = true;
 
@@ -12,7 +23,11 @@ angular.module('qtHousingApp')
         Auth.createUser({
           name: $scope.user.name,
           email: $scope.user.email,
-          password: $scope.user.password
+          password: $scope.user.password,
+          profileType: $scope.user.profileType,
+          pronouns: $scope.user.pronouns,
+          age: 18,
+          headline: ''
         })
         .then( function() {
           // Account created, redirect to home
