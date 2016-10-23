@@ -4,10 +4,9 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 export default React.createClass({
 	componentWillMount() {
-		this.props.handleLogin('nicerhugs', 'password')
+		this.props.handleRegister('nicerhugs', 'password')
 	},
 	render() {
-		console.log(this.props.isFetching);
 		return (
 			<div>
 
