@@ -4,24 +4,30 @@ import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'mat
 import FlatButton from 'material-ui/FlatButton';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
+import TextField from 'material-ui/TextField';
 
 const profileView = () => (
 
   <div>
     <AppBar title="QT Housing" iconClassNameRight="muidocs-icon-navigation-expand-more"/>
 
-
-
     <Card>
       <CardHeader avatar="images/jsa-128.jpg"/>
 
-      <CardTitle title="Daisy" subtitle="they/them" />
-      <CardTitle title="About" />
       <CardText>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-        Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-        Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+      <TextField id="text-field-default" hintText="Name" multiLine={true} rows={1}
+        defaultValue={this.props.user.name}
+      />
+      <TextField id="text-field-default" hintText="prononoun(s)" multiLine={true} rows={1}
+        defaultValue={this.props.prononoun}
+      />
+      </CardText>
+      <CardTitle title="About">
+      </CardTitle>
+      <CardText>
+      <TextField id="text-field-default" hintText="My Story" multiLine={true} rows={10}
+        defaultValue={this.props.about}
+      />
       </CardText>
       <CardActions>
         <FlatButton label="See More" />
