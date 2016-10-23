@@ -18,9 +18,15 @@ function postSession(url, email, password) {
 		.then(response => {
     	return response.json()
   	})
-		.then(resolve)
-		.catch(reject);
-	})
+		.then(response => {
+			fetch(`/api/users/me?access_token=${response.token}`)
+			.then(user => {
+				return user.json()
+			})
+			.then(user => {resolve.call(null, {token: response.token, user: user})})
+			.catch(reject);
+		})
+	});
 }
 
 function postLogout() {
