@@ -10,7 +10,7 @@ export default React.createClass({
     }
   },
 	componentDidMount() {
-		this.props.fetchFeed(this.props.session.token, 'looking');
+		this.props.fetchFeed(this.props.session.token, this.props.session.profileType);
 	},
 	render() {
 		let matches = this.props.matches.map((user) => {

@@ -20,7 +20,6 @@ export default React.createClass({
 		this.props.handleLogin(this.state.email, this.state.password);
 	},
 	componentWillReceiveProps(nextProps) {
-		console.log(nextProps);
 		if (nextProps.token) {
 			browserHistory.push('/matches')
 		}
