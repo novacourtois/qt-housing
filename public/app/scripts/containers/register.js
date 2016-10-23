@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import RegisterComponent from '../components/register';
-import { requestLogin } from '../actions/session';
+import { register } from '../actions/session';
 
 const mapStateToProps = (state) => {
   return {
@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
 		handleRegister: (username, password) => {
-			dispatch(requestRegister(username, password))
+			dispatch(register(username, password))
 		}
 	}
 };
