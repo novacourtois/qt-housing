@@ -12,6 +12,11 @@ export default React.createClass({
 	componentDidMount() {
 		this.props.fetchFeed(this.props.session.token, this.props.session.profileType);
 	},
+	getInitialState() {
+		return {
+			
+		}
+	},
 	render() {
 		let matches = this.props.matches.map((user) => {
 			return <CardPreview user={user} key={user._id}/>

@@ -4,7 +4,7 @@ import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'mat
 export default React.createClass({
 	render() {
 		return (
-			<Card>
+			<Card onClick="">
 		    <CardTitle title={this.props.user.username} subtitle={this.props.user.pronouns}/>
 		    <CardText>
 		      {this.props.user.headline}
