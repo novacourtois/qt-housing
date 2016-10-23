@@ -1,7 +1,7 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-import { browserHistory } from 'react-router';
+import { browserHistory, Link} from 'react-router';
 
 export default React.createClass({
 	getInitialState() {
@@ -44,6 +44,9 @@ export default React.createClass({
 			<RaisedButton label="Login" fullWidth={true}
 					onClick={this.handleLogin}/>
 
+			<div>
+			<Link to="/register"> Register </Link>
+			</div>
 			</div>
 		)
 	}
