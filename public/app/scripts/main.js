@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import router from './router';
+import Root from './router';
+import store from './store';
 
-render(router, document.getElementById('container'));
+render(<Root store={store}/>, document.getElementById('container'));
