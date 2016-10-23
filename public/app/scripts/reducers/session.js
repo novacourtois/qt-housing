@@ -16,7 +16,7 @@ function session(state = initialState, action) {
 		case 'REQUEST_LOGOUT' :
     	return Object.assign({}, state, {isFetching: true})
 		case 'RECEIVE_SESSION' :
-		 	return Object.assign({}, state, action.user, {isFetching: false})
+		 	return Object.assign({}, state, action.user.user, {token: action.user.token, isFetching: false})
 		case 'RECEIVE_SESSION_ERROR' :
 	 		return Object.assign({}, state, {
 				isFetching: false,
