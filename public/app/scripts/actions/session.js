@@ -2,9 +2,9 @@ import 'whatwg-fetch';
 import store from '../store';
 const dispatch = store.dispatch;
 
-function postSession(type, username, password) {
+function postSession(url, username, password) {
 	return new Promise((resolve, reject) => {
-		fetch(`/api/${type}`, {
+		fetch(url, {
 		  method: 'post',
 		  headers: {
 		    'Accept': 'application/json',
@@ -67,7 +67,7 @@ function receiveLogout() {
 export function login(username, password) {
 	dispatch(requestSession());
   return function (dispatch) {
-    return postSession('login', username, password).then(
+    return postSession('/auth/local', username, password).then(
       user => dispatch(receiveSession(user)),
       error => dispatch(receiveSessionError(error))
     );
@@ -77,7 +77,7 @@ export function login(username, password) {
 export function register(username, password) {
 	dispatch(requestSession());
   return function (dispatch) {
-    return postSession('register', username, password).then(
+    return postSession('/api/users', username, password).then(
       user => dispatch(receiveSession(user)),
       error => dispatch(receiveSessionError(error))
     );
