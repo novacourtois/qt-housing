@@ -1,48 +1,68 @@
 'use strict';
 
 angular.module('qtHousingApp')
-  .controller('MainCtrl', function ($scope, $http, socket) {
-    $scope.awesomeThings = [];
+  .controller('MainCtrl', function ($scope, $http, socket, Auth) {
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
-      socket.syncUpdates('thing', $scope.awesomeThings);
-    });
 
-    $scope.getColor = function($index) {
-      var _d = ($index + 1) % 11;
-      var bg = '';
+    $scope.isLoggedIn = Auth.isLoggedIn;
 
-      switch(_d) {
-        case 1:       bg = 'red';         break;
-        case 2:       bg = 'green';       break;
-        case 3:       bg = 'darkBlue';    break;
-        case 4:       bg = 'blue';        break;
-        case 5:       bg = 'yellow';      break;
-        case 6:       bg = 'pink';        break;
-        case 7:       bg = 'darkBlue';    break;
-        case 8:       bg = 'purple';      break;
-        case 9:       bg = 'deepBlue';    break;
-        case 10:      bg = 'lightPurple'; break;
-        default:      bg = 'yellow';      break;
-      }
+    $scope.is_loading = true;
 
-      return bg;
-    };
+    if($scope.isLoggedIn()) {
 
-    $scope.getSpan = function($index) {
-      var _d = ($index + 1) % 11;
+      console.log('hello');
 
-      if (_d === 1 || _d === 5) {
-        return 2;
-      }
-    };
+      $scope.currentUser = Auth.getCurrentUser();
 
-    $scope.deleteThing = function(thing) {
-      $http.delete('/api/things/' + thing._id);
-    };
+      $scope.persons = [{
+        'firstName': 'Hannah',
+        'lastName': 'Scar',
+        'headline': 'Looking for a cool cat to share some space with me...',
+        'pronouns': 'they / them'
+      },{
+        'firstName': 'Hannah',
+        'lastName': 'Scar',
+        'headline': 'Looking for a cool cat to share some space with me...',
+        'pronouns': 'they / them'
+      },{
+        'firstName': 'Hannah',
+        'lastName': 'Scar',
+        'headline': 'Looking for a cool cat to share some space with me...',
+        'pronouns': 'they / them'
+      },{
+        'firstName': 'Hannah',
+        'lastName': 'Scar',
+        'headline': 'Looking for a cool cat to share some space with me...',
+        'pronouns': 'they / them'
+      },{
+        'firstName': 'Hannah',
+        'lastName': 'Scar',
+        'headline': 'Looking for a cool cat to share some space with me...',
+        'pronouns': 'they / them'
+      },{
+        'firstName': 'Hannah',
+        'lastName': 'Scar',
+        'headline': 'Looking for a cool cat to share some space with me...',
+        'pronouns': 'they / them'
+      },{
+        'firstName': 'Hannah',
+        'lastName': 'Scar',
+        'headline': 'Looking for a cool cat to share some space with me...',
+        'pronouns': 'they / them'
+      },];
 
-    $scope.$on('$destroy', function () {
-      socket.unsyncUpdates('thing');
-    });
+      console.log($scope.persons);
+
+      $scope.is_loading = false;
+
+
+
+
+    }
+    else {
+
+
+
+      $scope.is_loading = false;
+    }
   });

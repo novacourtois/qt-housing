@@ -30,53 +30,92 @@ angular.module('qtHousingApp', [
       .iconSet('toggle', '../assets/iconsets/toggle-icons.svg', 24)
       .iconSet('avatar', '../assets/iconsets/avatar-icons.svg', 128);
 
+      var customPrimary = {
+        '50': '#d0b2dd',
+        '100': '#c6a0d5',
+        '200': '#bb8ecd',
+        '300': '#b07cc6',
+        '400': '#a66bbe',
+        '500': '9B59B6',
+        '600': '#8f4baa',
+        '700': '#804399',
+        '800': '#713b87',
+        '900': '#623475',
+        'A100': '#dbc3e5',
+        'A200': '#e6d5ed',
+        'A400': '#f0e7f4',
+        'A700': '#532c64'
+    };
+    $mdThemingProvider
+        .definePalette('customPrimary', 
+                        customPrimary);
 
-      $mdThemingProvider.definePalette('app-accent', {
+    var customAccent = {
+        '50': '#0a3934',
+        '100': '#0d4f48',
+        '200': '#11655c',
+        '300': '#157b70',
+        '400': '#199083',
+        '500': '#1ca697',
+        '600': '#24d2bf',
+        '700': '#33dcca',
+        '800': '#49e0cf',
+        '900': '#5ee4d5',
+        'A100': '#24d2bf',
+        'A200': '#20bcab',
+        'A400': '#1ca697',
+        'A700': '#74e7db'
+    };
+    $mdThemingProvider
+        .definePalette('customAccent', 
+                        customAccent);
+
+    var customWarn = {
+        '50': '#dbc07f',
+        '100': '#d6b66b',
+        '200': '#d0ac58',
+        '300': '#caa244',
+        '400': '#bf9636',
+        '500': '#ab8630',
+        '600': '#97762a',
+        '700': '#836725',
+        '800': '#6f571f',
+        '900': '#5b481a',
+        'A100': '#e1c993',
+        'A200': '#e6d3a7',
+        'A400': '#ecddbb',
+        'A700': '#473814'
+    };
+    $mdThemingProvider
+        .definePalette('customWarn', 
+                        customWarn);
+
+    var customBackground = {
         '50': '#ffffff',
-        '100': '#ffd4dc',
-        '200': '#ff9caf',
-        '300': '#ff5475',
-        '400': '#ff365d',
-        '500': '#ff1744',
-        '600': '#f70030',
-        '700': '#d9002a',
-        '800': '#ba0024',
-        '900': '#9c001e',
+        '100': '#ffffff',
+        '200': '#ffffff',
+        '300': '#ffffff',
+        '400': '#ffffff',
+        '500': '#f3f3f3',
+        '600': '#e6e6e6',
+        '700': '#d9d9d9',
+        '800': '#cdcdcd',
+        '900': '#c0c0c0',
         'A100': '#ffffff',
-        'A200': '#ffd4dc',
-        'A400': '#ff365d',
-        'A700': '#d9002a',
-        'contrastDefaultColor': 'light',
-        'contrastDarkColors': '50 100 200 300 A100 A200'
-      });
-      $mdThemingProvider.definePalette('app-primary', {
-        '50': '#ffffff',
-        '100': '#d5f1ff',
-        '200': '#9ddfff',
-        '300': '#56c9fe',
-        '400': '#37bffe',
-        '500': '#19b5fe',
-        '600': '#01a9f7',
-        '700': '#0194d9',
-        '800': '#017fba',
-        '900': '#016a9c',
-        'A100': '#ffffff',
-        'A200': '#d5f1ff',
-        'A400': '#37bffe',
-        'A700': '#0194d9',
-        'contrastDefaultColor': 'light',
-        'contrastDarkColors': '50 100 200 300 400 500 A100 A200 A400'
-      });
+        'A200': '#ffffff',
+        'A400': '#ffffff',
+        'A700': '#b3b3b3'
+    };
+    $mdThemingProvider
+        .definePalette('customBackground', 
+                        customBackground);
 
-    $mdThemingProvider.theme('light')
-    .primaryPalette('app-primary')
-    .accentPalette('app-accent');
-
-    $mdThemingProvider.theme('night')
-    .primaryPalette('app-primary')
-    .accentPalette('app-accent').dark();
-
-    $mdThemingProvider.alwaysWatchTheme(true);
+   $mdThemingProvider.theme('default')
+       .primaryPalette('customPrimary')
+       .accentPalette('customAccent')
+       .warnPalette('customWarn')
+       .backgroundPalette('customBackground')
+   
 
   })
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $urlMatcherFactoryProvider, $compileProvider) {
