@@ -1,6 +1,6 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
-
+import RaisedButton from 'material-ui/RaisedButton';
 
 export default React.createClass({
 	componentWillMount() {
@@ -10,9 +10,19 @@ export default React.createClass({
 		console.log(this.props.isFetching);
 		return (
 			<div>
+
+				<h1>QT Housing</h1>
 				<TextField
-      		hintText="The hint text can be as long as you want, it will wrap."
-    		/>
+				hintText="username"
+				floatingLabelText="Username"
+				floatingLabelFixed={true} />
+				<TextField
+				hintText="Password"
+				floatingLabelText="password"
+				type="password" />
+
+				<RaisedButton label="Sign Up" fullWidth={true} />
+
 			</div>
 		)
 	}
