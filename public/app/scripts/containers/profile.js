@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import View from '../components/profileView';
-// import Edit from '../components/profileEdit';
+import View from '../components/profileView';
+import Edit from '../components/profileEdit';
 
 const RegisterComponent = React.createClass({
 	render() {
 		return (
-			<div>profile goes here</div>
+			<div> <View/> <Edit/> </div>
 		)
 	}
 });
