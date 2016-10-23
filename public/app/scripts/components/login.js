@@ -1,6 +1,7 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import { browserHistory } from 'react-router';
 
 export default React.createClass({
 	getInitialState() {
@@ -10,7 +11,6 @@ export default React.createClass({
 		}
 	},
 	updateUsername(email) {
-		console.log(email.target.value);
 		this.setState({email: email.target.value})
 	},
 	updatePassword(password) {
@@ -20,8 +20,7 @@ export default React.createClass({
 		this.props.handleLogin(this.state.email, this.state.password);
 	},
 	componentWillReceiveProps(nextProps) {
-		console.log(nextProps);
-		if (nextProps.username !== '') {
+		if (nextProps.token) {
 			browserHistory.push('/matches')
 		}
 	},

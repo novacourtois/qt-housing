@@ -49,8 +49,8 @@ function receiveSessionError(error) {
 	return { type: 'RECEIVE_SESSION_ERROR', error }
 }
 
-function requestSession() {
-  return { type: 'REQUEST_SESSION' }
+function requestSession(email) {
+  return { type: 'REQUEST_SESSION', email}
 }
 
 function requestLogout() {
@@ -62,7 +62,7 @@ function receiveLogout() {
 }
 
 export function login(email, password) {
-	dispatch(requestSession());
+	dispatch(requestSession(email));
   return function (dispatch) {
     return postSession('/auth/local', email, password).then(
       user => dispatch(receiveSession(user)),
@@ -72,7 +72,7 @@ export function login(email, password) {
 }
 
 export function register(email, password) {
-	dispatch(requestSession());
+	dispatch(requestSession(email));
   return function (dispatch) {
     return postSession('/api/users', email, password).then(
       user => dispatch(receiveSession(user)),

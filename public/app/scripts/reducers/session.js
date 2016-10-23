@@ -12,7 +12,7 @@ const initialState = {
 function session(state = initialState, action) {
 	switch (action.type) {
     case 'REQUEST_SESSION' :
-      return Object.assign({}, state, {isFetching: true})
+      return Object.assign({}, state, {email: action.email, isFetching: true})
 		case 'REQUEST_LOGOUT' :
     	return Object.assign({}, state, {isFetching: true})
 		case 'RECEIVE_SESSION' :
