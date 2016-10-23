@@ -93,6 +93,23 @@ exports.me = function(req, res, next) {
   });
 };
 
+
+exports.feed = function(req, res, next) {
+  var userId = req.user._id;
+
+  var profileType = "looking";
+  if (req.user.profileType == profileType) {
+    profileType = "renting";
+  }
+
+  User.find({
+    profileType: profileType
+  },  function(err, feed) { 
+    if (err) return next(err);
+    res.json(feed);
+  });
+};
+
 /**
  * Authentication callback
  */
